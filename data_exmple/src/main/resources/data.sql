@@ -1,3 +1,4 @@
+/*exaple JPA , jpa create table
 create table person
 (
    id integer not null,
@@ -6,10 +7,12 @@ create table person
    birth_date timestamp,
    primary key(id)
 );
-
+*/
 
 INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) 
 VALUES(10001,  'Pepe', 'Cadiz',sysdate());
+INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) 
+VALUES(10004,  'Pepe', 'Alcoi',sysdate());
 INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) 
 VALUES(10002,  'James', 'New York',sysdate());
 INSERT INTO PERSON (ID, NAME, LOCATION, BIRTH_DATE ) 

@@ -16,6 +16,10 @@ import com.gfttraining.data_access_example.entity.Person;
 
 @Repository
 public class PersonSpringJdbc {
+	
+	@Autowired
+	PersonRowMapper personRowMapper;
+	
 	@Autowired
 	JdbcTemplate jdbctemplate;
 	
@@ -32,6 +36,10 @@ public class PersonSpringJdbc {
 	
 	public int deleteById(int id){
 		return jdbctemplate.update("delete from person where id=?", new Object[] { id });
+	}
+	
+	public List<Person> myMapper() {
+		return jdbctemplate.query("Select * from person", personRowMapper);
 	}
 	
 }
