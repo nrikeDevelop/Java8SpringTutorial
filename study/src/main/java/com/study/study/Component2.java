@@ -2,7 +2,7 @@ package com.study.study;
 
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class Component2 {
 
 	public void msg(String msg) {
