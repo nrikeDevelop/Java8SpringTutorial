@@ -27,8 +27,7 @@ public class Ex1Filtering {
 	public static void printLineNumber(Path path) throws IOException {
 		int nLines = 0;
 		try (Stream<String> lines = Files.lines(path);) {
-			lines.count();
-			
+			nLines = lines.skip(1).distinct().count();
 		}
 		System.out.println("Lines: " + nLines);
 	}

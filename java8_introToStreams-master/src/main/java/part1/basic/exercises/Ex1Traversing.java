@@ -3,6 +3,7 @@ package part1.basic.exercises;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 import model.Person;
 
@@ -43,6 +44,10 @@ public class Ex1Traversing {
 	}
 
 	private static void printOldPeopleNamesInJava8(List<Person> people, Predicate<Person> pred) {
+		
+		//people.stream().filter(pred).map(Person::getName).forEach(System.out::println);
+		people.stream().filter(pred).map(x -> x.getName()).forEach(System.out::println);
+
 
 		// With Streams
 	    // TODO implement similar functionality than in printOldPeopleNamesInJava7 method using streams
