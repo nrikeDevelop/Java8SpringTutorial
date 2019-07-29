@@ -22,6 +22,7 @@ public class UserDaoService {
 	public List<User> findAll() {
 		return users;
 	}
+	
 
 	public User save(User user) {
 		if (user.getId() == null) {
@@ -52,5 +53,8 @@ public class UserDaoService {
 		}		
 		return null;
 	}
+	
+
+
 }
 
