@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,11 @@ public class ApiExerciseService {
 	
 	@PersistenceContext
 	EntityManager entityManager;
+	
+	public List<Product> findAll(){
+		TypedQuery<Product> tq = entityManager.createNamedQuery("find_all_products",Product.class);
+		return tq.getResultList();
+	}
 
 	public Product findById(int id) {
 		return entityManager.find(Product.class, id);
@@ -34,7 +40,7 @@ public class ApiExerciseService {
 	}
 	
 	public void delete(int id) {
-		Product pr = entityManager.find(Product.class, id);
+		Product pr = this.findById(id);
 		try {
 			entityManager.remove(pr);
 		}catch(Exception e) {

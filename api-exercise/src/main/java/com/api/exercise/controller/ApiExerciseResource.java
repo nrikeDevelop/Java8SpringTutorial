@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,4 +38,9 @@ public class ApiExerciseResource {
 		apiExerciseService.delete(id);
 	}
 	
+	@PutMapping("/products")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	public void updateProduct(@RequestBody Product product) {
+		apiExerciseService.update(product);
+	}
 }
